@@ -1,0 +1,93 @@
+@charset "utf-8";
+/*CSS Reset*/
+*{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+ul,ol,li{list-style:none;}
+em,i{font-style:normal;}
+img{border:none;}
+a{text-decoration:none;/*transition: all 0.2s linear;*/}
+input,img {vertical-align: middle;}
+.clearfix:after{display:block;content:'';clear:both;visibility:hidden;}
+.none{display:none;}
+.no-spacing{margin:0;padding:0;}
+.margin-center{margin:0 auto;text-align:center;}
+body{font-family: "微软雅黑";width: 100%; background: #ececec;}
+*{box-sizing: border-box;}
+body,html{ height: 100%;}
+.pos_rel{ position: relative}
+
+/*公共*/
+.btn1{ border-radius: 3px; background: #e2455c; border: 1px solid #e2455c; color: #fff; font-size: 12px;}
+.btn1.not{ background: #ccc; border: 1px solid #ccc;}
+.btn2{ border-radius: 3px; background: none; border: 1px solid #e2455c; color: #e2455c; font-size: 12px;}
+.gray{ background: #ccc; border: 1px solid #ccc;}
+
+
+/*首页*/
+.head{width: 100%; min-width: 1280px; height: 70px; background: #c8132d url(../img/logo.png) no-repeat left center; font-size: 12px; padding-top: 29px;}
+.head p{ float: right; color: #fff; display: block; line-height: 12px; padding-right: 20px;}
+.head p span{ margin-left: 10px;}
+.head a{ padding: 0 20px; border-left: 1px solid #f5334f; display: block; float: right; line-height: 12px; color: #fff;}
+
+.main{width: 100%; height: calc(100% - 70px); min-width: 1280px;}
+.main_left{ width: 270px; float: left; height: 100%; background: #fff;}
+.main_left>ul>li{ min-height: 60px; line-height: 40px; padding:10px; background: #fff; cursor: pointer; font-size: 18px;}
+.main_left>ul>li:nth-child(1)>a{display: block; background: url(../img/nav1.png) no-repeat 15px center;}
+.main_left>ul>li:nth-child(2)>a{display: block; background: url(../img/nav2.png) no-repeat 15px center;}
+.main_left>ul>li:nth-child(3)>a{display: block; background: url(../img/nav3.png) no-repeat 15px center;}
+.main_left>ul>li.active{ background: #ececec;}
+.main_left>ul>li.active a{ color: #c8132d;}
+.main_left li a{ color: #111; padding-left: 65px;}
+
+
+.main_right{ width: calc(100% - 290px); min-width: 990px; height: 100%; background: #ececec; float: left; margin-left: 20px; overflow: auto; padding-bottom: 20px;}
+
+.search{ margin: 10px 15px 10px 0; overflow: hidden;}
+.search input{ width: 180px; height: 40px; line-height: 40px; background: #fff; color: #111; padding: 0 20px; font-size: 14px; border: none; outline: none; display: block; float: left; margin: 10px 0;}
+.search label{ display: block; float: left; height: 40px; line-height: 40px; margin: 10px 10px 10px 0;}
+.search a{ float: right; width: 120px; height: 40px; line-height: 40px; text-align: center; margin: 10px;}
+.search i{ width: 100px; height: 40px; margin: 10px 0; display: block; float: left; background: url(../img/to.png) no-repeat center center;}
+
+.staff{ width: calc(100% - 25px); max-height: 500px; overflow: auto; text-align: center; background: #fff; margin-right: 25px;}
+.staff td,
+.staff th{ height: 50px; font-size: 14px; color: #333; font-weight: normal; border-left: 1px solid #ececec; margin-left: -1px; padding: 5px;}
+.staff th{font-weight: bold;background-color: #ef8400}
+.staff td:first-child,
+.staff th:first-child{ border: none;}
+.staff td{
+
+}
+
+
+
+/*分页*/
+.ui-paging-container{color:#666;font-size: 12px;}
+.ui-paging-container ul{overflow: hidden;text-align: center;}
+.ui-paging-container ul,.ui-paging-container li{list-style: none;}
+.ui-paging-container li{display: inline-block; padding:1px 6px; margin-left: 5px;color:#e2455c;}
+.ui-paging-container li.ui-pager{cursor: pointer;}
+.ui-paging-container li.ui-pager:hover,.ui-paging-container li.focus{background-color: #e2455c;color:#fff;}
+.ui-paging-container li.ui-paging-ellipse{border:none;}
+.ui-paging-container li.ui-paging-toolbar{padding:0;}
+.ui-paging-container li.ui-paging-toolbar select{height:22px;border:1px solid #ddd;color: #666;}
+.ui-paging-container li.ui-paging-toolbar input{line-height: 20px; height:20px;padding:0;border:1px solid #ddd;text-align: center;width: 30px;margin:0 0 0 5px;vertical-align: middle;}
+.ui-paging-container li.ui-paging-toolbar a{vertical-align: middle; text-decoration: none;display: inline-block;height:20px;border:1px solid #ddd;vertical-align: top;border-radius: 2px;line-height: 20px;padding:0 3px;cursor: pointer;margin-left: 5px;color: #666;}
+.ui-paging-container li.ui-pager-disabled { cursor: pointer;border:none;color:#e2455c;}
+li.ui-pager-disabled:hover{ color: #fff;}
+.ui-paging-container{ float: right; font-size: 14px; margin: 40px 25px 0 0;}
+
+/*登陆页*/
+.login{ width: 100%; height: calc(100% - 70px); min-width: 1280px; background: url(../img/login.jpg) no-repeat center center; background-size: 100% 100%; padding-top: 180px;}
+.login .centerDiv{ width: 420px; height: 320px;-webkit-box-shadow:0 0 100px rgba(0, 0, 0, .5); -moz-box-shadow:0 0 100px rgba(0, 0, 0, .5); box-shadow:0 0 100px rgba(0, 0, 0, .5); margin: 0 auto; background: #fff url(../img/loginDiv.png) no-repeat center 40px; padding-top: 120px; position: relative;}
+.login .centerDiv .tip{ width: 100%; text-align: center; height: 30px; line-height: 30px; font-size: 14px; color: red; position: absolute; top: 85px; left:0;}
+.login .centerDiv a{ width: 300px; height: 40px; line-height: 40px; text-align: center; background: #c8132d; font-size: 14px; color: #fff; margin: 0 auto; display: block; border-radius: 5px;}
+.login .centerDiv p{ width: 300px; height: 40px; line-height: 40px; display: block; margin: 0 auto 20px; font-size: 14px; color: #333;}
+.login .centerDiv p input{ width: 240px; height: 40px; line-height: 38px; border: 1px solid #999; border-radius: 5px; display: block; float: left; padding: 0 10px; outline: none;}
+.login .centerDiv p label{ width: 60px; height: 40px; line-height: 40px; display: block; float: left;}
+
+/*日报管理*/
+.search input.time{width: 180px; border: none; float: left; outline: none; padding: 0 10px; font-size: 14px; background:#fff url(../img/date.png) no-repeat right center; position: relative; }
+.search input.time::-webkit-inner-spin-button { visibility: hidden; }
+.search input.time::-webkit-calendar-picker-indicator{ width: 25px; height: 20px; position: absolute; right: 0; opacity: 0;}
+.search input.time::-webkit-clear-button { display:none }

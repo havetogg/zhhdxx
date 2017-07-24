@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.havetogg.ssm.dao.RecommendDao">
+
+    <resultMap id="RecommendBaseMap" type="com.havetogg.ssm.model.Recommend">
+        <result column="recom_code" property="recomCode"/>
+        <result column="count" property="count"/>
+        <result column="createtime" property="createTime"/>
+    </resultMap>
+
+    <select id="listRecommend" parameterType="java.util.Map" resultMap="RecommendBaseMap">
+        select y.recom_code as recom_code,count(y.recom_code) AS count,y.createtime as createtime from yxyg_vote_record y
+        <where>
+            1=1
+            <if test="startDate!=null">
+                AND y.createtime &gt; str_to_date(#{startDate}, '%Y-%m-%d')
+            </if>
+            <if test="endDate!=null">
+                AND y.createtime &lt; str_to_date(#{endDate}, '%Y-%m-%d')
+            </if>
+        </where>
+        GROUP BY y.recom_code
+        ORDER BY y.recom_code
+    </select>
+
+    <select id="getPageRecommend" parameterType="java.util.Map" resultMap="RecommendBaseMap">
+        select y.recom_code as recom_code,count(y.recom_code) AS count from yxyg_vote_record y
+        <where>
+            1=1
+            <if test="startDate!=null">
+                AND y.createtime &gt; str_to_date(#{startDate}, '%Y-%m-%d')
+            </if>
+            <if test="endDate!=null">
+                AND y.createtime &lt; str_to_date(#{endDate}, '%Y-%m-%d')
+            </if>
+        </where>
+        GROUP BY y.recom_code
+        ORDER BY y.recom_code
+        limit #{pageNum},#{pageSize}
+    </select>
+</mapper>

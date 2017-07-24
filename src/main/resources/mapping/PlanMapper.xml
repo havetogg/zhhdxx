@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.havetogg.ssm.dao.PlanDao">
+
+    <resultMap id="PlanBaseMap" type="com.havetogg.ssm.model.Plan">
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="planTime" property="planTime" jdbcType="VARCHAR"/>
+        <result column="enterpriseName" property="enterpriseName" jdbcType="VARCHAR"/>
+        <result column="enterpriseScale" property="enterpriseScale" jdbcType="VARCHAR"/>
+        <result column="customerNum" property="customerNum" jdbcType="VARCHAR"/>
+        <result column="isVisited" property="isVisited" jdbcType="VARCHAR"/>
+        <result column="needNum" property="needNum" jdbcType="VARCHAR"/>
+        <result column="goal" property="goal" jdbcType="VARCHAR"/>
+        <result column="other" property="other" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="listPlan" parameterType="java.util.Map" resultMap="PlanBaseMap">
+        SELECT u.user_name,p.planTime,p.enterpriseName,p.enterpriseScale,p.customerNum,p.isVisited,p.needNum,p.goal,p.other
+        from out_plan p,`user` u
+        <where>
+            p.user_id=u.user_id
+            <if test="startDate!=null">
+                AND p.planTime BETWEEN #{startDate} AND #{endDate}
+            </if>
+            AND p.createtime &gt; #{year}
+        </where>
+        ORDER BY planTime
+    </select>
+
+
+</mapper>

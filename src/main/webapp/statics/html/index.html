@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>微信达人推荐</title>
+		<link rel="stylesheet" href="../../../../../../../Documents/Tencent%20Files/1654198511/FileRecv/MerchantsInformation/css/backstage.css" />
+		<script type="text/javascript" src="js/jQuery-1.11.3.js" ></script>
+		<script type="text/javascript" src="js/ajaxfileupload.js" ></script>
+		<!--分页-->
+		<script type="text/javascript" src="js/query.js" ></script>
+		<script type="text/javascript" src="js/paging.js" ></script>
+		
+		<script type="text/javascript">
+			$(function(){
+				//分页方式
+		        $('#pageToolbaro').click(function(){
+		            init();
+		        });
+		        
+		        //表格兼容性偶数行的背景色
+				$("table tr:nth-child(odd)").css("background-color","#f4f4f4");
+				$("table tr th").css("background-color","#fff");
+			})
+	        
+		</script>
+	</head>
+	<body>
+		<!--head-->
+		<div class="head">
+			<a href="javascript:logout();">注销</a>
+			<!--<a href="javascript:login();">登录</a>-->
+			<p>欢迎<span id="userName"></span></p>
+		</div>
+		<!--main-->
+		<div class="main">
+			<!--main-left-->
+			<div class="main_left">
+				<ul>
+					<li class="active">
+						<a href="javascript:;">微信达人推荐</a>
+					</li>
+					<li>
+						<a href="javascript:;">周计划</a>
+					</li>
+					<li>
+						<a href="javascript:;">霸王餐</a>
+					</li>
+				</ul>
+			</div>
+			<!--main-right-->
+			<div class="main_right">
+				<div class="search">
+					<label>起始日期</label>
+					<input class="time" type="date"/>
+					<i></i>
+					<label>结束日期</label>
+					<input class="time" type="date"/>
+					<a class="btn2" href="javascript:;">数据导出</a>
+					<a class="btn1" href="javascript:;">查询</a>
+				</div>
+				<table class="staff">
+					<colgroup>
+						<col width="50%" />
+						<col width="50%" />
+					</colgroup>
+					<thead>
+						<tr>
+							<th>编号</th>
+							<th>数据</th>
+						</tr>
+					</thead>
+					<tbody id="tb">
+						<tr>
+							<td>064646454</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>064646454</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>064646454</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>064646454</td>
+							<td>1000</td>
+						</tr>
+					</tbody>
+				</table>
+				<!--分页-->
+				<div id="pageToolbaro"></div>
+			</div>
+		</div>
+	</body>
+</html>
